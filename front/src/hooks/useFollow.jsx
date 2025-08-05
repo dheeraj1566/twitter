@@ -15,8 +15,7 @@ const useFollow = () => {
 			return data;
 		},
 		onSuccess: (data) => {
-			toast.success(data.message); // 👈 will show "followed" or "unfollowed"
-			// refetch affected data
+			toast.success(data.message); 
 			queryClient.invalidateQueries({ queryKey: ["authUser"] });
 			queryClient.invalidateQueries({ queryKey: ["userProfile"] });
 			queryClient.invalidateQueries({ queryKey: ["suggestedUsers"] });
